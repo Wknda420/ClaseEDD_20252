@@ -20,5 +20,11 @@ public class Clase1 {
         
         int[] numeros = {10, 20, 30 ,40 50};
 
+        OperacionesconArreglos objArreglo = new OperacionesconArreglos();
+
+        int[] numeros = objArreglo.llenarArreglo(5);
+
+        System.ouy.println(Arrays.toString(numeros));
+
     }
 }
