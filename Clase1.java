@@ -24,7 +24,7 @@ public class Clase1 {
 
         int[] numeros = objArreglo.llenarArreglo(5);
 
-        System.ouy.println(Arrays.toString(numeros));
+        System.out.println(Arrays.toString(numeros));
 
     }
 }
