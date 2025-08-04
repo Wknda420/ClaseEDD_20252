@@ -9,7 +9,7 @@ public class OperacionesconArreglos {
 
         int[] numeros = new int[tam];
 
-        for(int i = 0 < numeros.length; i++){
+        for(int i = 0; i < numeros.length; i++){
             numeros[i] = rand.nextInt(100 - 1) + 1; 
         }
 
