@@ -3,8 +3,8 @@ package TallerClase3;
 public class Libro {
     private String titulo;
     private String autor;
-    private double precio;   
-} 
+    private double precio; 
+
     public String getTitulo() {
             return titulo;
         }
@@ -24,4 +24,4 @@ public class Libro {
             this.precio = precio;
         }
     
-
+}
