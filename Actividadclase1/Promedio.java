@@ -1,6 +1,6 @@
 public class Promedio {
     public static void main(String[] args) {
-        int[] numeros = {10, 20, 30, 40, 50}
+        int[] numeros = {12, 22, 45, 50, 70};
         int suma = 0;
 
         //suma los elementos
