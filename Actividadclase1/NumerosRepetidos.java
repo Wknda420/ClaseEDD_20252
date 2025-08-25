@@ -6,7 +6,7 @@ public class NumerosRepetidos {
         for (int i=0; i < numeros.length; i++) {
             boolean esRepetido = false;
 
-            for (int j = 0; j < numeros.length; j++) {
+            for (int j = 0; j < i; j++) {
                 if (numeros[i] == numeros[j]) {
                     esRepetido = true;
                     break;
@@ -16,15 +16,15 @@ public class NumerosRepetidos {
             if (esRepetido) {
                 continue;
             }
-            int contador = 0;
-            for (int j = i; j < numeros.length; j++) {
+            int contador = 1;
+            for (int j = i + 1; j < numeros.length; j++) {
                 if (numeros[i] == numeros[j]) {
                     contador++;
                 }
             }
 
             if (contador > 1) {
-                System.out.println(numeros[i] + "(aparece " + contador + " veces)");
+                System.out.println("- " + numeros[i] + "(aparece " + contador + " veces)");
             }
         }
     }
