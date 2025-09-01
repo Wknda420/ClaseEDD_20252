@@ -90,7 +90,17 @@ public class Universidad {
                     anatomia++;
                 } else {
                     otros++;
+                }
             }
         }
+        if (matematicas > 0) System.out.println("Matemáticas: " + matematicas + " estudiantes");
+        if (fisica > 0) System.out.println("Física: " + fisica + " estudiantes");
+        if (programacion > 0) System.out.println("Programación: " + programacion + " estudiantes");
+        if (historia > 0) System.out.println("Historia: " + historia + " estudiantes");
+        if (literatura > 0) System.out.println("Literatura: " + literatura + " estudiantes");
+        if (biologia > 0) System.out.println("Biología: " + biologia + " estudiantes");
+        if (quimica > 0) System.out.println("Química: " + quimica + " estudiantes");
+        if (anatomia > 0) System.out.println("Anatomía: " + anatomia + " estudiantes");
+        if (otros > 0) System.out.println("Otros cursos: " + otros + " estudiantes");
     }
 }
