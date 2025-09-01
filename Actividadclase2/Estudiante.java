@@ -8,5 +8,11 @@ public class Estudiante {
         this.id = id;
         this.cursos = cursos;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    
 }
 
