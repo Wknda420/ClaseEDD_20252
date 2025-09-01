@@ -17,10 +17,14 @@ public class Universidad {
         matriculaCursos(3, cursos3);
         matriculaCursos(4, cursos2);
 
+        System.out.println("                           ");
         System.out.println("Estudiantes por facultad:");
+        System.out.println("                           ");
         mostrarEstudiantesPorFacultad();
 
+        System.out.println("                           ");
         System.out.println("Estudiantes por curso:");
+        System.out.println("                           ");
         mostrarEstudiantesPorCurso();
     }
 
@@ -29,6 +33,7 @@ public class Universidad {
 
         estudiantes.add(estudiante);
 
+        System.out.println("                           ");
         System.out.println("Estudiante" + id + " matriculado en: " + Arrays.toString(cursos));
 
     }
