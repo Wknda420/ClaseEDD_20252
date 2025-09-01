@@ -13,6 +13,8 @@ public class Estudiante {
         return id;
     }
 
-    
+    public String[] getCursos() {
+        return cursos;
+    }
 }
 
