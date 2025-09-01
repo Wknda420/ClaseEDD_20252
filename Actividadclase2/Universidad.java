@@ -58,4 +58,16 @@ public class Universidad {
         System.out.println("Facultad de Medicina: " + medicina + " estudiantes");
         System.out.println("Facultad General: " + general + " estudiantes");
     }
+
+    public static void mostrarEstudiantesPorCurso(){
+        int matematicas = 0;   
+        int fisica = 0;        
+        int programacion = 0;  
+        int historia = 0;      
+        int literatura = 0;    
+        int biologia = 0;      
+        int quimica = 0;       
+        int anatomia = 0;      
+        int otros = 0;         
+    }
 }
