@@ -68,6 +68,29 @@ public class Universidad {
         int biologia = 0;      
         int quimica = 0;       
         int anatomia = 0;      
-        int otros = 0;         
+        int otros = 0;
+        
+        for (Estudiante estudiante : estudiantes) {
+            for (String curso : estudiante.getCursos()) {
+                if (curso == "Matematicas") {
+                    matematicas++;
+                } else if (curso == "Física") {
+                    fisica++;
+                } else if (curso == "Programación") {
+                    programacion++;
+                } else if (curso == "Historia") {
+                    historia++;
+                } else if (curso == "Literatura") {
+                    literatura++;
+                } else if (curso == "Biología") {
+                    biologia++;
+                } else if (curso == "Química") {
+                    quimica++;
+                } else if (curso == "Anatomía") {
+                    anatomia++;
+                } else {
+                    otros++;
+            }
+        }
     }
 }
