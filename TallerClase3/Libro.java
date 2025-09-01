@@ -30,5 +30,11 @@ public class Libro {
         public void setPrecio(double precio) {
             this.precio = precio;
         }
-    
+
+        public void mostrarInformacion() {
+            System.out.println("Titulo: " + titulo);
+            System.out.println("Autor: " + autor);
+            System.out.println("Precio: $" + String.format("%, .0f", precio) + " COP");
+            System.out.println("-------------------------------");
+        }
 }
