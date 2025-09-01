@@ -1,5 +1,7 @@
 package Actividadclase2;
 
+import java.util.List;
+
 public class Universidad {
     private static List<Estudiante> estudiantes = new ArrayList<>();
 
@@ -20,5 +22,12 @@ public class Universidad {
         mostrarEstudiantesPorCurso();
     }
 
-    
+    public static void matriculaCursos(int id, String[] cursos) {
+        Estudiante estudiante = new Estudiante(id, cursos);
+
+        estudiantes.add(estudiante);
+
+        System.out.println("Estudiante" + id + " matriculado en: " + Arrays.toString(cursos));
+        
+    }
 }
