@@ -1,5 +1,7 @@
 package Actividadclase2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Universidad {
@@ -28,6 +30,32 @@ public class Universidad {
         estudiantes.add(estudiante);
 
         System.out.println("Estudiante" + id + " matriculado en: " + Arrays.toString(cursos));
-        
+
+    }
+
+    public static void mostrarEstudiantesPorFacultad() {
+        int ciencias = 0;
+        int humanidades = 0;
+        int medicina = 0;
+        int general = 0;
+
+        for (Estudiante estudiante : estudiantes){
+            for (String curso : estudiante.getCursos()){
+                if (curso == "Matematicas" || curso == "Fisica" || curso == "Programacion"){
+                    ciencias++;
+                } else if (curso == "Historia" || curso == "Literatura"){
+                    humanidades++;
+                } else if (curso == "Biologia" || curso == "Quimica" || curso == "Anatomia"){
+                    medicina++;
+                } else {
+                    general++;
+                }
+            } 
+        }
+
+        System.out.println("Facultad de Ciencias: " + ciencias + " estudiantes");
+        System.out.println("Facultad de Humanidades: " + humanidades + " estudiantes");
+        System.out.println("Facultad de Medicina: " + medicina + " estudiantes");
+        System.out.println("Facultad General: " + general + " estudiantes");
     }
 }
