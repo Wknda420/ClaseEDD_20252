@@ -34,5 +34,13 @@ public class GestionarEstudiantes {
         if (!encontrado) {
             System.out.println("Estudiante no encontrado");
         }
-    }
+        
+        String matriculaEliminar = "2023002";
+        encontrado = false;
+        
+        for (int i = 0; i < totalEstudiantes; i++) {
+            if (estudiantes[i].getMatricula().equals(matriculaEliminar)) {
+                System.out.println("Eliminando a: " + estudiantes[i].getNombre());
+
+                
 }
