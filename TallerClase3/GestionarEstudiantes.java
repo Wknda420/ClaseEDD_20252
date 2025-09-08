@@ -42,5 +42,13 @@ public class GestionarEstudiantes {
             if (estudiantes[i].getMatricula().equals(matriculaEliminar)) {
                 System.out.println("Eliminando a: " + estudiantes[i].getNombre());
 
-                
+                for (int j = i; j < totalEstudiantes - 1; j++) {
+                    estudiantes[j] = estudiantes[j + 1];
+                }
+                estudiantes[totalEstudiantes - 1] = null;
+                totalEstudiantes--;
+                encontrado = true;
+                break;
+            }
+        }
 }
