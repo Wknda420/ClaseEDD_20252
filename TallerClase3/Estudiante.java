@@ -35,5 +35,10 @@ public class Estudiante {
         this.promedio = promedio;
     }
 
-    
+    public void mostrarInf() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Matrícula: " + matricula);
+        System.out.println("Promedio: " + promedio);
+        System.out.println("-------------------");
+    }
 }
