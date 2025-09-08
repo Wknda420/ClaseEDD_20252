@@ -12,6 +12,16 @@ public class ActualizarPrecio {
             libro.mostrarInformacion();
          }
 
-         for()
+         for(Libro libro : misLibros) {
+            if(libro.getTitulo().equals("Harry Potter")) {
+                libro.setPrecio(60000);
+                System.out.println("Precio del libro Harry Potter cambiado!");
+            }
+         }
+
+         System.out.println("\nPrecios actualizados:");
+         for (Libro libro : misLibros) {
+            libro.mostrarInformacion();
+         }
     }
 }
