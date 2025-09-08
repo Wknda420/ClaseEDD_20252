@@ -5,7 +5,6 @@ public class GestionarEstudiantes {
         Estudiante[] estudiantes = new Estudiante[5];
         int totalEstudiantes = 0;
 
-
         estudiantes[totalEstudiantes] = new Estudiante("Ana", "2023001", 4.5);
         totalEstudiantes++;
         
@@ -14,5 +13,10 @@ public class GestionarEstudiantes {
         
         estudiantes[totalEstudiantes] = new Estudiante("Maria", "2023003", 4.2);
         totalEstudiantes++;
+
+        System.out.println("Estudiantes agregados: ");
+        for (int i = 0; i < totalEstudiantes; i++) {
+            estudiantes[i].mostrarInf();
+        }
     }
 }
