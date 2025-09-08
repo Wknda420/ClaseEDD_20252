@@ -18,5 +18,21 @@ public class GestionarEstudiantes {
         for (int i = 0; i < totalEstudiantes; i++) {
             estudiantes[i].mostrarInf();
         }
+
+        String matriculaBuscada = "200207";
+        boolean encontrado = false;
+         
+        for (int i = 0; i < totalEstudiantes; i++) {
+            if (estudiantes [i].getMatricula().equals(matriculaBuscada)) {
+                System.out.println("Estudiante encontrado:");
+                estudiantes[i].mostrarInf();
+                encontrado = true;
+                break; 
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Estudiante no encontrado");
+        }
     }
 }
