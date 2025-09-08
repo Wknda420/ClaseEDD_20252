@@ -51,4 +51,14 @@ public class GestionarEstudiantes {
                 break;
             }
         }
+
+        if(!encontrado) {
+            System.out.println("No se enocntro el estudiante por eliminar");
+        }
+
+        System.out.println("Estudiantes despues de eliminar:");
+        for (int i = 0; i < totalEstudiantes; i++) {
+            estudiantes[i].mostrarInf();
+        }
+    }    
 }
