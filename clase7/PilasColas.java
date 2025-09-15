@@ -1,3 +1,4 @@
+package clase7;
 import java.util.Stack;
 
 public class PilasColas {
