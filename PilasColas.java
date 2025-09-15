@@ -17,5 +17,20 @@ public class PilasColas {
 
         System.out.println("La pila esta vacia? " + pila.empty());
 
+        //mostrar pila
+
+        System.out.println(pila);
+
+        //tope de la pila
+
+        System.out.println(pila.peek());
+
+        //ultimo elemento de la pila
+
+        pila.pop();
+        System.out.println(pila.peek());
+        System.out.println(pila);
+
+
     }
 }
