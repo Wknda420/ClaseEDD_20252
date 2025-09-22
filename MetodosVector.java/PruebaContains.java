@@ -23,11 +23,17 @@ public class PruebaContains {
 
         System.out.println("¿Contiene 'fresa'? " + pila.contains("fresa"));
         System.out.println("¿Contiene 'piña'? " + pila.contains("piña"));
+        System.out.println("                         ");
 
         //prueba con null
         pila.push(null);
         System.out.println("Después de agregar null:");
         System.out.println("Pila: " + pila);
         System.out.println("¿Contiene null? " + pila.contains(null));
+
+        //prueba q contains busca en toda la pila
+        System.out.println("-----------------------------------------");
+        System.out.println("Cima de la pila: " + pila.peek());
+        System.out.println("¿Contiene 'manzana'(esta abajo del todo)? " + pila.contains("manzana"));
     }
 }
