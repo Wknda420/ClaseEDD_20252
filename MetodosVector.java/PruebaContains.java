@@ -8,5 +8,10 @@ public class PruebaContains {
         pila.push("banana");
         pila.push("naranja");
         pila.push("uva");
+
+        System.out.println("               ");
+        System.out.println("Pila: " + pila);
+
+        
     }
 }
