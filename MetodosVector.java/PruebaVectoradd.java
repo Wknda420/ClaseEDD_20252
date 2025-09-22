@@ -14,6 +14,13 @@ public class PruebaVectoradd {
 
         System.out.println("Tamaño: " + pila.size());
         System.out.println("Ultimo numero añadido: " + pila.peek());
+
+        //si quisiera añadir mas numeros
+        pila.add(40);
+        pila.add(50);
+
+        //que muestre la pila depsues de los numeros añadidos
+        System.out.println("Pila despues de añadir mas numeros: " + pila);
     }
     
 }
