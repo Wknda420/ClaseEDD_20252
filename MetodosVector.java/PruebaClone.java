@@ -13,6 +13,9 @@ public class PruebaClone {
         Stack<String> clone = (Stack<String>) Original.clone();
 
         System.out.println("Copia: " + clone);
+
+        //verificar contenido
+        System.out.println("¿Tienen el mismo contenido? " + Original.equals(clone));
         
 
     }
