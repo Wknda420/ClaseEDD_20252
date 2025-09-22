@@ -11,7 +11,14 @@ public class PruebaContains {
 
         System.out.println("               ");
         System.out.println("Pila: " + pila);
+        System.out.println("------------------------");
 
+        //probar los contains
+
+        System.out.println("¿Contiene 'naranja'? " + pila.contains("naranja"));
+        System.out.println("¿Contiene 'manzana'? " + pila.contains("manzana"));
+        System.out.println("¿Contiene 'banana'? " + pila.contains("banana"));
+        System.out.println("-------------------------------------------------");
         
     }
 }
