@@ -1,14 +1,16 @@
-import java.util.Vector;
+import java.util.Stack;
 
 public class PruebaVectoradd {
     public static void main(String[] args) {
-        Vector<Integer> numeros = new Vector<>();
+        Stack<Integer> pila = new Stack<>();
 
-        numeros.add(10);
-        numeros.add(20);
-        numeros.add(30);
+        //Añade los numeros
+        pila.add(10);
+        pila.add(20);
+        pila.add(30);
 
-        System.out.println("Numeros: " + numeros);
+        //Mostrar la pila
+        System.out.println("Pila de numeros: " + pila);
     }
     
 }
