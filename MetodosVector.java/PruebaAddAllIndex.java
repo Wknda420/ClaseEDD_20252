@@ -7,7 +7,7 @@ public class PruebaAddAllIndex {
         
         Stack<String> pila = new Stack<>();
         pila.add("A");
-        pila.add("E");
+        pila.add("E"); //0: A , 1: E
 
         System.out.println("Antes: " + pila);
 
