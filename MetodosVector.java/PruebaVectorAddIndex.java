@@ -11,5 +11,16 @@ public class PruebaVectorAddIndex {
         pila.add(50);
 
         System.out.println("Pila: " + pila);
+
+        //insertar en un lado especifico
+        pila.add(0, 20);
+
+        //mostrar pila de nuevo
+        System.out.println("Pila despues de agregar al principio un numero: " + pila);
+
+        //insertar en medio
+        pila.add(2, 25);
+
+        System.out.println("Pila despues de agregar un elemento en el medio: " + pila);
     }
 }
