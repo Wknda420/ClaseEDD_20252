@@ -11,6 +11,9 @@ public class PruebaVectoradd {
 
         //Mostrar la pila
         System.out.println("Pila de numeros: " + pila);
+
+        System.out.println("Tamaño: " + pila.size());
+        System.out.println("Ultimo numero añadido: " + pila.peek());
     }
     
 }
