@@ -15,9 +15,19 @@ public class Pan {
             pila2.push(ingredientes);
         }
 
-        
+        if (!pila1.pop().equals(pila2.pop())){ 
 
         return false;
+        }
+
+        while (pila1.size()> 1) {
+            pila1.pop();
+        }
+
+        while (pila2.size()> 1) {
+            pila2.pop();
+        }
+        return pila1.pop().equals(pila2.pop());
 
     }
 }
