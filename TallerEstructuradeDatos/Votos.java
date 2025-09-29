@@ -1,4 +1,4 @@
-package TallerEstructuradeDatos;
+
 import java.util.Stack;
 
 public class Votos {
