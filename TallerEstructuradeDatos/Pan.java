@@ -32,11 +32,16 @@ public class Pan {
     }
 
     public static void main(String[] args) {
+
+        System.out.println("");
+        System.out.println("¿Usan el mismo tipo de pan?");
         System.out.println(panSimilar(
             new String[]{"pan blanco", "lechuga", "pan blanco"},
             new String[]{"pan blanco", "tomate", "pan blanco"}
         ));
 
+        System.out.println("");
+        System.out.println("Usan el mismo tipo de pan?");
         System.out.println(panSimilar(
             new String[]{"pan integral", "pollo", "pan integral"},
             new String[]{"pan blanco", "pollo", "pan blanco"}
