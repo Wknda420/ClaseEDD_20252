@@ -13,4 +13,12 @@ public class GestorTareas {
             colaEspera.add(tarea);
         }
     }
+    public Tarea procesarSiguienteTarea(){
+        if(!pilaPrioritaria.empty()){
+            Tarea tarea = pilaPrioritaria.pop();
+
+            registrarTareaCompletada(tarea);
+            return tarea;
+        }
+    }
 }
