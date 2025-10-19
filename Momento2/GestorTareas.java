@@ -30,5 +30,8 @@ public class GestorTareas {
     }
     private void registrarTareaCompletada(Tarea tarea) {
         long tiempoProcesamiento = System.currentTimeMillis() - tarea.getTiempoLlegada();
+
+        String estado = "Completada en " + tiempoProcesamiento + " ms";
+        registroTrazabilidad.put(tarea.getId(), estado);
     }
 }
