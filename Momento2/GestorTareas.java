@@ -20,5 +20,11 @@ public class GestorTareas {
             registrarTareaCompletada(tarea);
             return tarea;
         }
+        else if (!colaEspera.empty()){
+            Tarea tarea = colaEspera.poll();
+
+            registrarTareaCompletada(tarea);
+            return tarea;
+        }
     }
 }
