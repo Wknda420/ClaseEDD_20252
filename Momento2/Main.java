@@ -13,5 +13,8 @@ public class Main {
         ClaseTarea procesada = gestor.procesarSiguienteTarea();
         System.out.println("Procesada: " + procesada.getId());
 
-        
+        System.out.println("Estado T2: " + gestor.consultarEstadoTarea("T2"));
+        System.out.println("Estado T1: " + gestor.consultarEstadoTarea("T1"));
+        System.out.println("Estado T99: " + gestor.consultarEstadoTarea("T99"));
+    }
 }
