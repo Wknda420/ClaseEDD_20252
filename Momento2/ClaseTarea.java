@@ -10,4 +10,7 @@ public class ClaseTarea {
         this.prioridad = prioridad;
         this.tiempoLlegada = System.currentTimeMillis();
     }
+    public String getId() {return id;}
+    public int getPrioridad() {return prioridad;}
+    public long getTiempoLlegada() {return tiempoLlegada;}
 }
