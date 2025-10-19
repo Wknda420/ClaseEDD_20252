@@ -26,5 +26,9 @@ public class GestorTareas {
             registrarTareaCompletada(tarea);
             return tarea;
         }
+        return null;
+    }
+    private void registrarTareaCompletada(Tarea tarea) {
+        long tiempoProcesamiento = System.currentTimeMillis() - tarea.getTiempoLlegada();
     }
 }
