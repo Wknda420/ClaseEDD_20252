@@ -34,4 +34,9 @@ public class GestorTareas {
         String estado = "Completada en " + tiempoProcesamiento + " ms";
         registroTrazabilidad.put(tarea.getId(), estado);
     }
+    public String consultarEstadoTarea(String idTarea){
+        if (registroTrazabilidad.containsKey(idTarea)){
+            return "Completada";
+        }
+    }
 }
