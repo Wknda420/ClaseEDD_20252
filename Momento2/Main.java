@@ -9,5 +9,9 @@ public class Main {
         gestor.agregarTarea(normal);
         gestor.agregarTarea(urgente);
         gestor.agregarTarea(media);
-    }
+        
+        ClaseTarea procesada = gestor.procesarSiguienteTarea();
+        System.out.println("Procesada: " + procesada.getId());
+
+        
 }
