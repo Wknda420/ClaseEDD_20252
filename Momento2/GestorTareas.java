@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class GestorTareas {
-    private Queue<Tarea> colaEspera = new LinkedList<>();
-    private Stack<Tarea> pilaPrioritaria = new Stack<>();
+    private Queue<ClaseTarea> colaEspera = new LinkedList<>();
+    private Stack<ClaseTarea> pilaPrioritaria = new Stack<>();
     private Map<String, String> registroTrazabilidad = new HashMap<>();
 
-    public void agregarTarea(Tarea tarea){
+    public void agregarTarea(ClaseTarea tarea){
         if (tarea.getPrioridad() == 3){
             pilaPrioritaria.push(tarea);
         }
@@ -13,22 +13,22 @@ public class GestorTareas {
             colaEspera.add(tarea);
         }
     }
-    public Tarea procesarSiguienteTarea(){
+    public ClaseTarea procesarSiguienteTarea(){
         if(!pilaPrioritaria.empty()){
-            Tarea tarea = pilaPrioritaria.pop();
+            ClaseTarea tarea = pilaPrioritaria.pop();
 
             registrarTareaCompletada(tarea);
             return tarea;
         }
-        else if (!colaEspera.empty()){
-            Tarea tarea = colaEspera.poll();
+        else if (!colaEspera.isEmpty()){
+            ClaseTarea tarea = colaEspera.poll();
 
             registrarTareaCompletada(tarea);
             return tarea;
         }
         return null;
     }
-    private void registrarTareaCompletada(Tarea tarea) {
+    private void registrarTareaCompletada(ClaseTarea tarea) {
         long tiempoProcesamiento = System.currentTimeMillis() - tarea.getTiempoLlegada();
 
         String estado = "Completada en " + tiempoProcesamiento + " ms";
@@ -38,12 +38,12 @@ public class GestorTareas {
         if (registroTrazabilidad.containsKey(idTarea)){
             return "Completada";
         }
-        for (Tarea tarea : pilaPrioritaria){
+        for (ClaseTarea tarea : pilaPrioritaria){
             if (tarea.getId().equals(idTarea)) {
                 return "Pendiente en pila prioritaria";
             }
         }
-        for (Tarea tarea : colaEspera) {
+        for (ClaseTarea tarea : colaEspera) {
             if (tarea.getId().equals(idTarea)){
                 return "Pendiente en cola de espera";
             }
