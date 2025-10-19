@@ -43,5 +43,10 @@ public class GestorTareas {
                 return "Pendiente en pila prioritaria";
             }
         }
+        for (Tarea tarea : colaEspera) {
+            if (tarea.getId().equals(idTarea)){
+                return "Pendiente en cola de espera";
+            }
+        }
     }
 }
