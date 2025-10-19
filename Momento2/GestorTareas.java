@@ -38,5 +38,10 @@ public class GestorTareas {
         if (registroTrazabilidad.containsKey(idTarea)){
             return "Completada";
         }
+        for (Tarea tarea : pilaPrioritaria){
+            if (tarea.getId().equals(idTarea)) {
+                return "Pendiente en pila prioritaria";
+            }
+        }
     }
 }
