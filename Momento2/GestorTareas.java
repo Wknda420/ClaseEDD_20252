@@ -55,7 +55,7 @@ public class GestorTareas {
 
 //con arraylist
 
-public ArrayList<ClaseTarea> obtenerTareasOrdenadasPorPrioridad() {
+/*public ArrayList<ClaseTarea> obtenerTareasOrdenadasPorPrioridad() {
     ArrayList<ClaseTarea> resultado = new ArrayList<>();
 
     resultado.addAll(pilaPrioritaria);
@@ -76,4 +76,4 @@ public ArrayList<ClaseTarea> obtenerTareasOrdenadasPorPrioridad() {
     return resultado;
 
 
-}
+}*/
