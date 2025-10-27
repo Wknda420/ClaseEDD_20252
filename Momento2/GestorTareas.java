@@ -1,5 +1,5 @@
-import java.util.HashMap;
-import java.util.ArrayList;
+import java.util.*;
+
 
 public class GestorTareas {
     private Queue<ClaseTarea> colaEspera = new LinkedList<>();
@@ -56,19 +56,24 @@ public class GestorTareas {
 //con arraylist
 
 public ArrayList<ClaseTarea> obtenerTareasOrdenadasPorPrioridad() {
-    ArrayList<ClaseTarea> todasLasTareas = new ArrayList<>();
+    ArrayList<ClaseTarea> resultado = new ArrayList<>();
 
-    for (ClaseTarea tarea: pilaPrioritaria) {
-        todasLasTareas.add(tarea);
-    }
+    resultado.addAll(pilaPrioritaria);
 
+    ArrayList<ClaseTarea> prioridad2 = new ArrayList<>();
+    ArrayList<ClaseTarea> prioridad1 = new ArrayList<>();
     for (ClaseTarea tarea: colaEspera) {
-        if (tarea.getPrioridad()== 1) {
-            todasLasTareas.add(tarea);
+        if (tarea.getPrioridad()== 2) {
+            prioridad2.add(tarea);
+        }else {
+            prioridad1.add(tarea);
         }
     }
 
-    return todasLasTareas;
+    resultado.addAll(prioridad2);
+    resultado.addAll(prioridad1);
+
+    return resultado;
 
 
 }
