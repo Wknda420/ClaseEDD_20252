@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.ArrayList;
 
 public class GestorTareas {
     private Queue<ClaseTarea> colaEspera = new LinkedList<>();
@@ -50,4 +51,24 @@ public class GestorTareas {
         }
         return "ID no encontrado";
     }
+}
+
+//con arraylist
+
+public ArrayList<ClaseTarea> obtenerTareasOrdenadasPorPrioridad() {
+    ArrayList<ClaseTarea> todasLasTareas = new ArrayList<>();
+
+    for (ClaseTarea tarea: pilaPrioritaria) {
+        todasLasTareas.add(tarea);
+    }
+
+    for (ClaseTarea tarea: colaEspera) {
+        if (tarea.getPrioridad()== 1) {
+            todasLasTareas.add(tarea);
+        }
+    }
+
+    return todasLasTareas;
+
+
 }
