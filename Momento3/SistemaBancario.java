@@ -25,7 +25,7 @@ public class SistemaBancario {
 
             switch (opcion) {
                 case 1:
-                    crearCuentaMenu(scanner, gestor)
+                    crearCuentaMenu(scanner, gestor);
                     break;
 
                 case 2:
@@ -95,7 +95,7 @@ public class SistemaBancario {
     }
 
     private static void mostrarMenu() {
-        System.out.println("\n" + "=".repeat(50));
+        System.out.println("=".repeat(50));
         System.out.println("Sistema Bancario");
         System.out.println("=".repeat(50));
         System.out.println("1. Crear cuenta");
@@ -174,7 +174,7 @@ public class SistemaBancario {
         gestor.mostrarUltimas(cantidad);
     }
     private static void actualizarCuentaMenu(Scanner scanner, GestorBancario gestor) {
-        System.out.println("\n--- ACTUALIZAR CUENTA ---");
+        System.out.println("--- ACTUALIZAR CUENTA ---");
         System.out.print("Número de cuenta: ");
         String numero = scanner.nextLine();
         System.out.print("Nuevo nombre del titular: ");
@@ -183,7 +183,7 @@ public class SistemaBancario {
         gestor.actualizarCuenta(numero, nuevoTitular);
     }
     private static void eliminarCuentaMenu(Scanner scanner, GestorBancario gestor) {
-        System.out.println("\n--- ELIMINAR/DESACTIVAR CUENTA ---");
+        System.out.println("--- ELIMINAR/DESACTIVAR CUENTA ---");
         System.out.print("Número de cuenta: ");
         String numero = scanner.nextLine();
         
