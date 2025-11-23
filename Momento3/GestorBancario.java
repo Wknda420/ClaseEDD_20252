@@ -8,5 +8,10 @@ import java.util.Collections;
 public class GestorBancario {
     ArrayList<Cuenta> cuentas;
     Queue<Transaccion> colaTransacciones;
-    
-}
+    Stack<Transaccion> pilaHistorial;
+
+    public GestorBancario(){
+        this.cuentas = new ArrayList<>();
+        this.colaTransacciones = new LinkedList<>();
+        this.pilaHistorial = new Stack<>();
+    }
