@@ -69,6 +69,47 @@ public class GestorBancario {
             System.out.println("La cuenta no fue encontrada");
             return;
         }
-
+        Transaccion trans = new Transaccion("DEPOSITO", numero, null, monto);
+        colaTransacciones.add(trans);
+        procesarTransacciones();
     }
+    public void retirar(String numero, double monto) {
+        if (monto <= 0) {
+            System.out.println("Monto invalido:(");
+            return;
+        }
+        Cuenta cuenta = buscarCuenta(numero);
+        if (cuenta == null) {
+            System.out.println("La cuenta no fue encontrada");
+            return;
+        }
+        if (cuenta.saldo < monto) {
+            System.out.println("Saldo insuficiente:o");
+            return;
+        }
+        Transaccion trans = new Transaccion("RETIRO", numero, null, monto);
+        colaTransacciones.add(trans);
+        procesarTransacciones();
+    }
+    public void transferir(String origen, String destino, double monto) {
+        if (monto <= 0) {
+            System.out.println("Monto invalido");
+            return;
+        }
+        Cuenta cuentaOrigen = buscarCuenta(origen);
+        Cuenta cuentaDestino = buscarCuenta(destino);
+
+        if (cuentaOrigen == null || cuentaDestino == null) {
+            System.out.println("Una de las cuentas no existe");
+            return;
+        }
+        if (cuentaOrigen.saldo < monto) {
+            System.out.println("Saldo insuficiente");
+            return;
+        }
+        Transaccion trans = new Transaccion ("TRANFERENCIA, origen, destino, monto");
+        colaTransacciones.add(trans);
+        procesarTransacciones();
+    }
+        
 }
