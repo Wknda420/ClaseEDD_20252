@@ -181,4 +181,88 @@ public class GestorBancario {
         arr.set(alto, temp);
         return i + 1;
     }
+    public void ordenarPorTitular() {
+        if (cuentas.isEmpty()) {
+            System.out.println("No hay cuentas");
+            return;
+        }
+        
+        ArrayList<Cuenta> activas = new ArrayList<>();
+        for (Cuenta c : cuentas) {
+            if (c.activa) activas.add(c);
+        }
+        
+        mergeSort(activas, 0, activas.size() - 1);
+        
+        System.out.println("CUENTAS ORDENADAS POR TITULAR:");
+        System.out.println("=".repeat(60));
+        for (Cuenta c : activas) {
+            c.mostrar();
+        }
+    }
+
+    private void mergeSort(ArrayList<Cuenta> arr, int izq, int der) {
+        if (izq < der) {
+            int medio = (izq + der) / 2;
+            mergeSort(arr, izq, medio);
+            mergeSort(arr, medio + 1, der);
+            merge(arr, izq, medio, der);
+        }
+    }
+
+    private void merge(ArrayList<Cuenta> arr, int izq, int medio, int der) {
+        ArrayList<Cuenta> temp = new ArrayList<>();
+        int i = izq, j = medio + 1;
+        
+        while (i <= medio && j <= der) {
+            if (arr.get(i).titular.compareToIgnoreCase(arr.get(j).titular) <= 0) {
+                temp.add(arr.get(i));
+                i++;
+            } else {
+                temp.add(arr.get(j));
+                j++;
+            }
+        }
+        
+        while (i <= medio) {
+            temp.add(arr.get(i));
+            i++;
+        }
+        
+        while (j <= der) {
+            temp.add(arr.get(j));
+            j++;
+        }
+        
+        for (int k = 0; k < temp.size(); k++) {
+            arr.set(izq + k, temp.get(k));
+        }
+    }
+    public Cuenta busquedaBinaria(String numero) {
+        // Primero ordenar
+        ArrayList<Cuenta> ordenadas = new ArrayList<>(cuentas);
+        Collections.sort(ordenadas, (a, b) -> a.numeroCuenta.compareTo(b.numeroCuenta));
+        
+        int resultado = busquedaBinariaRecursiva(ordenadas, numero, 0, ordenadas.size() - 1);
+        
+        if (resultado != -1) {
+            return ordenadas.get(resultado);
+        }
+        return null;
+    }
+
+    private int busquedaBinariaRecursiva(ArrayList<Cuenta> arr, String numero, int izq, int der) {
+        if (der >= izq) {
+            int medio = izq + (der - izq) / 2;
+            
+            if (arr.get(medio).numeroCuenta.equals(numero))
+                return medio;
+            
+            if (arr.get(medio).numeroCuenta.compareTo(numero) > 0)
+                return busquedaBinariaRecursiva(arr, numero, izq, medio - 1);
+            
+            return busquedaBinariaRecursiva(arr, numero, medio + 1, der);
+        }
+        return -1;
+    }
 }
