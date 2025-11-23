@@ -93,4 +93,40 @@ public class SistemaBancario {
 
         scanner.close();
     }
+
+    private static void mostrarMenu() {
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("Sistema Bancario");
+        System.out.println("=".repeat(50));
+        System.out.println("1. Crear cuenta");
+        System.out.println("2. Consultar saldo");
+        System.out.println("3. Crear cuenta");
+        System.out.println("4. Depositar");
+        System.out.println("5. Retirar");
+        System.out.println("6. Transferir");
+        System.out.println("7. Mostrar todas las cuentas");
+        System.out.println("8. Ordenar por saldo");
+        System.out.println("9. Ordenar por titular");
+        System.out.println("10. Mostrar historial");
+        System.out.println("11. Mostrar ultimas transacciones");
+        System.out.println("12. Actualizar cuenta");
+        System.out.println("13. Eliminar cuenta");
+        System.out.println("0. Salir");
+        System.out.println("=".repeat(50));
+        System.out.println("Opcion: ");
+    }
+    private static void crearCuentaMenu(Scanner scanner, GestorBancario gestor) {
+        System.out.println("-----CREAR NUEVA CUENTA-----");
+        System.out.println("Numero de cuenta: ");
+        String numero = scanner.nextLine();
+        System.out.println("Titular: ");
+        String titular = scanner.nextLine();
+        System.out.println("Saldo incial: $");
+        double saldo = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Tipo (Ahorro/Corriente): ");
+        String tipo = scanner.nextLine();
+
+        gestor.crearCuenta(numero, titular, saldo, tipo);
+    }
 }
