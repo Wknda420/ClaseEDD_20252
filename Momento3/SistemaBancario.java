@@ -182,4 +182,11 @@ public class SistemaBancario {
         
         gestor.actualizarCuenta(numero, nuevoTitular);
     }
+    private static void eliminarCuentaMenu(Scanner scanner, GestorBancario gestor) {
+        System.out.println("\n--- ELIMINAR/DESACTIVAR CUENTA ---");
+        System.out.print("Número de cuenta: ");
+        String numero = scanner.nextLine();
+        
+        gestor.eliminarCuenta(numero);
+    }
 }
