@@ -167,4 +167,19 @@ public class SistemaBancario {
         
         gestor.transferir(origen, destino, monto);
     }
+    private static void mostrarUltimasMenu(Scanner scanner, GestorBancario gestor) {
+        System.out.print("¿Cuántas transacciones desea ver?: ");
+        int cantidad = scanner.nextInt();
+        scanner.nextLine();
+        gestor.mostrarUltimas(cantidad);
+    }
+    private static void actualizarCuentaMenu(Scanner scanner, GestorBancario gestor) {
+        System.out.println("\n--- ACTUALIZAR CUENTA ---");
+        System.out.print("Número de cuenta: ");
+        String numero = scanner.nextLine();
+        System.out.print("Nuevo nombre del titular: ");
+        String nuevoTitular = scanner.nextLine();
+        
+        gestor.actualizarCuenta(numero, nuevoTitular);
+    }
 }
