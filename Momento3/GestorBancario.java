@@ -107,7 +107,7 @@ public class GestorBancario {
             System.out.println("Saldo insuficiente");
             return;
         }
-        Transaccion trans = new Transaccion ("TRANFERENCIA, origen, destino, monto");
+        Transaccion trans = new Transaccion ("TRANSFERENCIA, origen, destino, monto", origen, destino, monto);
         colaTransacciones.add(trans);
         procesarTransacciones();
     }
@@ -264,5 +264,91 @@ public class GestorBancario {
             return busquedaBinariaRecursiva(arr, numero, medio + 1, der);
         }
         return -1;
+    }
+    public void mostrarCuentas() {
+        if (cuentas.isEmpty()) {
+            System.out.println("No hay cuentas");
+            return;
+        }
+        
+        System.out.println("TODAS LAS CUENTAS:");
+        System.out.println("=".repeat(60));
+        for (Cuenta c : cuentas) {
+            if (c.activa) c.mostrar();
+        }
+    }
+
+    public void consultarSaldo(String numero) {
+        Cuenta cuenta = buscarCuenta(numero);
+        if (cuenta == null) {
+            System.out.println("Cuenta no encontrada");
+            return;
+        }
+        System.out.println("SALDO:");
+        cuenta.mostrar();
+    }
+    public void mostrarHistorial() {
+        if (pilaHistorial.isEmpty()) {
+            System.out.println("No hay transacciones");
+            return;
+        }
+        
+        System.out.println("HISTORIAL DE TRANSACCIONES:");
+        System.out.println("=".repeat(60));
+        
+        // Copiar la pila para no modificarla
+        Stack<Transaccion> temp = new Stack<>();
+        temp.addAll(pilaHistorial);
+        
+        while (!temp.isEmpty()) {
+            temp.pop().mostrar();
+        }
+    }
+    public void mostrarUltimas(int cantidad) {
+        if (pilaHistorial.isEmpty()) {
+            System.out.println("No hay transacciones");
+            return;
+        }
+        
+        System.out.println("ÚLTIMAS " + cantidad + " TRANSACCIONES:");
+        System.out.println("=".repeat(60));
+        
+        Stack<Transaccion> temp = new Stack<>();
+        int count = 0;
+        
+        while (!pilaHistorial.isEmpty() && count < cantidad) {
+            Transaccion t = pilaHistorial.pop();
+            t.mostrar();
+            temp.push(t);
+            count++;
+        }
+        while (!temp.isEmpty()) {
+            pilaHistorial.push(temp.pop());
+        }
+    }
+
+    public void generarReporte() {
+        if (cuentas.isEmpty()) {
+            System.out.println("No hay datos");
+            return;
+        }
+        
+        double total = 0;
+        int activas = 0;
+        
+        for (Cuenta c : cuentas) {
+            if (c.activa) {
+                activas++;
+                total += c.saldo;
+            }
+        }
+        
+        System.out.println("REPORTE:");
+        System.out.println("=".repeat(40));
+        System.out.println("Total cuentas: " + cuentas.size());
+        System.out.println("Cuentas activas: " + activas);
+        System.out.printf("Saldo total: $%.2f\n", total);
+        System.out.printf("Saldo promedio: $%.2f\n", activas > 0 ? total / activas : 0);
+        System.out.println("Total transacciones: " + pilaHistorial.size());
     }
 }
