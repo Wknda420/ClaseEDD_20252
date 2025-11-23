@@ -16,6 +16,6 @@ public class Cuenta {
     }
 
     public void mostrar() {
-        System.out.printf("Cuenta: %s | Titular: %s | Saldo: $%.2f | Tipo: %s\n", numeroCuenta,titular, saldo, tipoCuenta);
+        System.out.printf("Cuenta: %s | Titular: %s | Saldo: $%.2f | Tipo: %s", numeroCuenta,titular, saldo, tipoCuenta);
     }
 }

@@ -14,6 +14,6 @@ public class Transaccion {
 
     }
     public void mostrar() {
-        System.out.printf("%s | Monto: $%.2f | Origen: %s | Destino: %s\n", tipo, monto, cuentaOrigen, cuentaDestino != null? cuentaDestino: "N/A");
+        System.out.printf("%s | Monto: $%.2f | Origen: %s | Destino: %s", tipo, monto, cuentaOrigen, cuentaDestino != null? cuentaDestino: "N/A");
     }
 }
