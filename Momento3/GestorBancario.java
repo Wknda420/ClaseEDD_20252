@@ -155,4 +155,30 @@ public class GestorBancario {
             c.mostrar();
         }
     }
+    private void quickSort(ArrayList<Cuenta> arr, int bajo, int alto) {
+        if (bajo < alto) {
+            int pi = partition(arr, bajo, alto);
+            quickSort(arr, bajo, pi - 1);
+            quickSort(arr, pi + 1, alto);
+        }
+    }
+
+    private int partition(ArrayList<Cuenta> arr, int bajo, int alto) {
+        double pivot = arr.get(alto).saldo;
+        int i = bajo - 1;
+        
+        for (int j = bajo; j < alto; j++) {
+            if (arr.get(j).saldo >= pivot) {
+                i++;
+                Cuenta temp = arr.get(i);
+                arr.set(i, arr.get(j));
+                arr.set(j, temp);
+            }
+        }
+        
+        Cuenta temp = arr.get(i + 1);
+        arr.set(i + 1, arr.get(alto));
+        arr.set(alto, temp);
+        return i + 1;
+    }
 }
