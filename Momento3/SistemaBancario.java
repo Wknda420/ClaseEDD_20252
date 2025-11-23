@@ -145,5 +145,26 @@ public class SistemaBancario {
 
         gestor.depositar(cuenta, monto);
     }
-    
+    private static void retirarMenu(Scanner scanner, GestorBancario gestor) {
+        System.out.println("---REALIZAR RETIRO---");
+        System.out.println("Numero de cuenta: ");
+        String cuenta = scanner.nextLine();
+        System.out.println("Monto a retirar: $");
+        double monto = scanner.nextDouble();
+        scanner.nextLine();
+
+        gestor.retirar(cuenta, monto);
+    }
+    private static void transferirMenu(Scanner scanner, GestorBancario gestor) {
+        System.out.println("--- TRANSFERIR FONDOS ---");
+        System.out.print("Cuenta origen: ");
+        String origen = scanner.nextLine();
+        System.out.print("Cuenta destino: ");
+        String destino = scanner.nextLine();
+        System.out.print("Monto a transferir: $");
+        double monto = scanner.nextDouble();
+        scanner.nextLine();
+        
+        gestor.transferir(origen, destino, monto);
+    }
 }
