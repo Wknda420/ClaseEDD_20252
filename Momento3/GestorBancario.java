@@ -118,19 +118,19 @@ public class GestorBancario {
             if (t.tipo.equals("DEPOSITO")) {
                 Cuenta c = buscarCuenta(t.cuentaOrigen);
                 c.saldo += t.monto;
-                System.out.println("✅ Depósito exitoso");
+                System.out.println("Depósito exitoso");
                 
             } else if (t.tipo.equals("RETIRO")) {
                 Cuenta c = buscarCuenta(t.cuentaOrigen);
                 c.saldo -= t.monto;
-                System.out.println("✅ Retiro exitoso");
+                System.out.println("Retiro exitoso");
                 
             } else if (t.tipo.equals("TRANSFERENCIA")) {
                 Cuenta origen = buscarCuenta(t.cuentaOrigen);
                 Cuenta destino = buscarCuenta(t.cuentaDestino);
                 origen.saldo -= t.monto;
                 destino.saldo += t.monto;
-                System.out.println("✅ Transferencia exitosa");
+                System.out.println("Transferencia exitosa");
             }
 
             pilaHistorial.push(t);
