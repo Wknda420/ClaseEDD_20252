@@ -136,4 +136,23 @@ public class GestorBancario {
             pilaHistorial.push(t);
         }
     }
+    public void ordenarPorSaldo() {
+        if (cuentas.isEmpty()) {
+            System.out.println("No hay cuentas");
+            return;
+        }
+        
+        ArrayList<Cuenta> activas = new ArrayList<>();
+        for (Cuenta c : cuentas) {
+            if (c.activa) activas.add(c);
+        }
+        
+        quickSort(activas, 0, activas.size() - 1);
+        
+        System.out.println("CUENTAS ORDENADAS POR SALDO:");
+        System.out.println("=".repeat(60));
+        for (Cuenta c : activas) {
+            c.mostrar();
+        }
+    }
 }
