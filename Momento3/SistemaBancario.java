@@ -129,4 +129,11 @@ public class SistemaBancario {
 
         gestor.crearCuenta(numero, titular, saldo, tipo);
     }
+
+    private static void consultarSaldoMenu(Scanner scanner, GestorBancario gestor) {
+        System.out.print("Numero de cuenta: ");
+        String numero = scanner.nextLine();
+        gestor.consultarSaldo(numero);
+    }
+    
 }
