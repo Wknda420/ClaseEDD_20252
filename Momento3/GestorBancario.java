@@ -15,3 +15,8 @@ public class GestorBancario {
         this.colaTransacciones = new LinkedList<>();
         this.pilaHistorial = new Stack<>();
     }
+
+    public void crearCuenta(String numero, String titular, double saldo, String tipo ) {
+        
+    }
+}
