@@ -6,5 +6,6 @@ import java.util.Stack;
 import java.util.Collections;
 
 public class GestorBancario {
+    ArrayList<Cuenta> cuentas;
     
 }
