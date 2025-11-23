@@ -347,8 +347,8 @@ public class GestorBancario {
         System.out.println("=".repeat(40));
         System.out.println("Total cuentas: " + cuentas.size());
         System.out.println("Cuentas activas: " + activas);
-        System.out.printf("Saldo total: $%.2f\n", total);
-        System.out.printf("Saldo promedio: $%.2f\n", activas > 0 ? total / activas : 0);
+        System.out.printf("Saldo total: $%.2f", total);
+        System.out.printf("Saldo promedio: $%.2f", activas > 0 ? total / activas : 0);
         System.out.println("Total transacciones: " + pilaHistorial.size());
     }
 }
