@@ -59,4 +59,7 @@ public class GestorBancario {
         cuenta.activa = false;
         System.out.println("Cuenta eliminada");
     }
+    public void depositar(String numero, double monto) {
+        
+    }
 }
