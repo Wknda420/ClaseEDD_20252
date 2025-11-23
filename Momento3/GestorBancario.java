@@ -7,5 +7,6 @@ import java.util.Collections;
 
 public class GestorBancario {
     ArrayList<Cuenta> cuentas;
+    Queue<Transaccion> colaTransacciones;
     
 }
