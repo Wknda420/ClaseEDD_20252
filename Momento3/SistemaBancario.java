@@ -135,5 +135,15 @@ public class SistemaBancario {
         String numero = scanner.nextLine();
         gestor.consultarSaldo(numero);
     }
+    private static void depositarMenu (Scanner scanner, GestorBancario gestor) {
+        System.out.println("---REALIZAR DEPOSITO---");
+        System.out.println("Numero de cuenta: ");
+        String cuenta = scanner.nextLine();
+        System.out.println("Monto a depositar: $");
+        double monto = scanner.nextDouble();
+        scanner.nextLine();
+
+        gestor.depositar(cuenta, monto);
+    }
     
 }
