@@ -60,6 +60,15 @@ public class GestorBancario {
         System.out.println("Cuenta eliminada");
     }
     public void depositar(String numero, double monto) {
-        
+        if (monto <= 0) {
+            System.out.println("El monto ingresado no es valido");
+            return;
+        }
+        Cuenta cuenta = buscarCuenta(numero);
+        if (cuenta == null) {
+            System.out.println("La cuenta no fue encontrada");
+            return;
+        }
+
     }
 }
