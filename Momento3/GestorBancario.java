@@ -118,11 +118,13 @@ public class GestorBancario {
             if (t.tipo.equals("DEPOSITO")) {
                 Cuenta c = buscarCuenta(t.cuentaOrigen);
                 c.saldo += t.monto;
+                t.nombreOrigen = c.titular;
                 System.out.println("Depósito exitoso");
                 
             } else if (t.tipo.equals("RETIRO")) {
                 Cuenta c = buscarCuenta(t.cuentaOrigen);
                 c.saldo -= t.monto;
+                t.nombreOrigen = c.titular;
                 System.out.println("Retiro exitoso");
                 
             } else if (t.tipo.equals("TRANSFERENCIA")) {
@@ -130,6 +132,8 @@ public class GestorBancario {
                 Cuenta destino = buscarCuenta(t.cuentaDestino);
                 origen.saldo -= t.monto;
                 destino.saldo += t.monto;
+                t.nombreOrigen = origen.titular;
+                t.nombreOrigen = destino.titular;
                 System.out.println("Transferencia exitosa");
             }
 
