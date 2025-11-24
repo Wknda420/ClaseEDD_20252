@@ -18,7 +18,7 @@ public class GestorBancario {
 
     public void crearCuenta(String numero, String titular, double saldo, String tipo ) {
         if (buscarCuenta(numero) != null) {
-            System.out.println("ERROR: La cuneta ya existe");
+            System.out.println("ERROR: La cuenta ya existe");
             return;
         }
         if (saldo < 0) {
@@ -28,6 +28,7 @@ public class GestorBancario {
         Cuenta nueva = new Cuenta(numero, titular, saldo, tipo);
         cuentas.add(nueva);
         System.out.println("Cuenta creada de manera exitosa");
+        System.out.println("  Total de cuentas en el sistema: " + cuentas.size());
     }
     public Cuenta buscarCuenta(String numero) {
         for (Cuenta c: cuentas) {
